@@ -76,3 +76,12 @@ span {
   font-family: "Quicksand", sans-serif;
   color: white;
 }
+
+.coder {
+  font-family: "Quicksand", sans-serif;
+  font-size: 20px;
+  position: relative;
+  right: -150px;
+  color: black;
+  text-decoration: none;
+}
