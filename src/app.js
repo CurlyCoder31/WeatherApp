@@ -49,21 +49,3 @@ function search(event) {
 
 let Form = document.querySelector("#search-form");
 Form.addEventListener("submit", search);
-
-//let city = prompt("Enter a city");
-//city = city.toLowerCase();
-//if (weather[city] !== undefined) {
-//let temperature = weather[city].temp;
-//let humidity = weather[city].temp;
-//let fahrenheitTemperature = Math.round((temperature * 9) / 5 + 32);
-//alert(
-//`It is currently ${fahrenheitTemperature}°F in ${city} with a humidity of 80%`
-//);
-//} else {
-//alert(
-//`Sorry we don't know the weather for this city, try Google! https://www.google.com/search?q=weather+${city}`
-//);
-//}
-//let cities = document.querySelector("#city");
-//let searchInput = document.querySelector("#search-input");
-//cities.innerHTML = searchInput.value;
