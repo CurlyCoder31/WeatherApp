@@ -85,3 +85,8 @@ span {
   color: black;
   text-decoration: none;
 }
+.description {
+  font-family: "Quicksand", sans-serif;
+  color: white;
+  font-size: 10px;
+}
