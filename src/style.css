@@ -100,4 +100,5 @@ span {
   font-family: "Quicksand", sans-serif;
   color: white;
   font-size: 15px;
+  text-transform: capitalize;
 }
