@@ -24,19 +24,20 @@ let h2 = document.querySelector("h2");
 h2.innerHTML = `${day} ${hours}:${minutes}`;
 
 function showTemperature(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temp").innerHTML = Math.round(
-    response.data.main.temp
-  );
-  document.querySelector("#High").innerHTML = Math.round(
-    response.data.main.temp_max
-  );
-  document.querySelector("#Low").innerHTML = Math.round(
-    response.data.main.temp_min
-  );
-  document.querySelector("#Feel").innerHTML = Math.round(
-    response.data.main.feels_like
-  );
+  let cityElement = document.querySelector("#city");
+  cityElement.innerHTML = response.data.name;
+  let tempElement = document.querySelector("#temp");
+  tempElement.innerHTML = Math.round(response.data.main.temp);
+  let highElement = document.querySelector("#High");
+  highElement.innerHTML = Math.round(response.data.main.temp_max);
+  let lowElement = document.querySelector("#Low");
+  lowElement.innerHTML = Math.round(response.data.main.temp_min);
+  let feelElement = document.querySelector("#Feel");
+  feelElement.innerHTML = Math.round(response.data.main.feels_like);
+  let windElement = document.querySelector("#Wind");
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.weather[0].description;
 }
 
 function search(event) {
@@ -50,3 +51,7 @@ function search(event) {
 
 let Form = document.querySelector("#search-form");
 Form.addEventListener("submit", search);
+
+// document.querySelector("#Wind").innerHTML = Math.round(
+// response.data.wind.speed
+//);
