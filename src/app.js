@@ -3,6 +3,7 @@ let hours = currentDate.getHours();
 if (hours < 10) {
   hours = `0${hours}`;
 }
+
 let minutes = currentDate.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
@@ -15,7 +16,7 @@ let days = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Sat",
+  "Saturday",
 ];
 let day = days[currentDate.getDay()];
 
