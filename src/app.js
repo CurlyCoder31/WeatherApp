@@ -23,6 +23,29 @@ let day = days[currentDate.getDay()];
 let h2 = document.querySelector("h2");
 h2.innerHTML = `${day} ${hours}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  
+  let days = ["Sunday", "Monday", "Tuesday"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col-3">
+              <span>Saturday</span>
+              <img
+                src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather03-512.png"
+                alt="cloudy-icon"
+              />
+              <span class="Day"> 66°F </span>
+            </div>`;
+    
+  });
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+
 function showTemperature(response) {
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.name;
@@ -81,3 +104,5 @@ fahrenheit.addEventListener("click", displayFahrenheitTemp);
 
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", displayCelsiusTemp);
+
+displayForecast();
