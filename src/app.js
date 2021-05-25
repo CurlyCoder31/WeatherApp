@@ -23,28 +23,34 @@ let day = days[currentDate.getDay()];
 let h2 = document.querySelector("h2");
 h2.innerHTML = `${day} ${hours}:${minutes}`;
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
-  
-  let days = ["Sunday", "Monday", "Tuesday"];
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday"];
   let forecastHTML = `<div class="row">`;
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
       `
             <div class="col-3">
-              <span>Saturday</span>
+              <span>${day}</span>
               <img
                 src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather03-512.png"
                 alt="cloudy-icon"
               />
               <span class="Day"> 66°F </span>
             </div>`;
-    
   });
-    forecastHTML = forecastHTML + `</div>`;
-    forecastElement.innerHTML = forecastHTML;
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "418734821e39e859c1f889f957790464";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 function showTemperature(response) {
   let cityElement = document.querySelector("#city");
@@ -67,6 +73,7 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   celsiusTemperature = response.data.main.temp;
+  getForecast(response.data.coord);
 }
 
 function search(event) {
@@ -104,5 +111,3 @@ fahrenheit.addEventListener("click", displayFahrenheitTemp);
 
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", displayCelsiusTemp);
-
-displayForecast();
