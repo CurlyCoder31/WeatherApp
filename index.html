@@ -33,14 +33,21 @@
           <input type="submit" value="Search" />
         </form>
 
-        <h1 id="city"></h1>
+        <h1 id="city">Kansas City</h1>
         <h2 id="date"></h2>
         <div id="description"></div>
         <div class="row">
           <div class="col-6">
-            <img src="" alt="cloudy-icon" id="icon" />
+            <img
+              src="http://openweathermap.org/img/wn/01d@2x.png"
+              alt="cloudy-icon"
+              id="icon"
+            />
             <span id="temp">54</span
-            ><span id="degrees">°C | <a href="#" id="fahrenheit">°F</a></span>
+            ><span id="degrees"
+              ><a href="#" id="celsius" class="active"> °C </a>|
+              <a href="#" id="fahrenheit">°F</a></span
+            >
           </div>
 
           <div class="col-6">
@@ -60,7 +67,6 @@
                   Wind speed: <span id="Wind"></span>
                   <span class="units"><small>mph</small></span>
                 </li>
-                <li>Precipitation: <span id="rain" class="units"></span></li>
               </ul>
             </div>
           </div>

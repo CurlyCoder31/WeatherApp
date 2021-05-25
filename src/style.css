@@ -102,3 +102,9 @@ span {
   font-size: 15px;
   text-transform: capitalize;
 }
+
+#degrees .active {
+  text-decoration: none;
+  cursor: default;
+  color: white;
+}

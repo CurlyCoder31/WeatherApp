@@ -56,9 +56,19 @@ function search(event) {
 }
 function displayFahrenheitTemp(event) {
   event.preventDefault();
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemperature = Math.round(celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temp");
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
   temperatureElement.innerHTML = fahrenheitTemperature;
+}
+
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp");
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let celsiusTemperature = null;
@@ -68,3 +78,6 @@ Form.addEventListener("submit", search);
 
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", displayFahrenheitTemp);
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", displayCelsiusTemp);
