@@ -24,22 +24,19 @@ let h2 = document.querySelector("h2");
 h2.innerHTML = `${day} ${hours}:${minutes}`;
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday"];
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
-      `
-            <div class="col-3">
-              <span>${day}</span>
-              <img
-                src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather03-512.png"
-                alt="cloudy-icon"
+      `<div class="col-3">
+        <span>${forecastDay.dt}</span>
+          <img
+            src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
               />
-              <span class="Day"> 66°F </span>
+              <span class="Max"> ${forecastDay.temp.max}° </span> <span class="Min">${forecastDay.temp.min}°</span>
             </div>`;
   });
   forecastHTML = forecastHTML + `</div>`;
