@@ -91,8 +91,12 @@ function showTemperature(response) {
 
 function search(event) {
   event.preventDefault();
-  let apiKey = "418734821e39e859c1f889f957790464";
   let cityName = document.querySelector("#search-input").value;
+
+  searchCity(cityName);
+}
+function searchCity(cityName) {
+  let apiKey = "418734821e39e859c1f889f957790464";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=imperial`;
 
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
@@ -114,4 +118,4 @@ Form.addEventListener("submit", search);
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", displayFahrenheitTemp);
 
-search("Kansas City");
+searchCity("Kansas City");
