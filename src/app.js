@@ -113,3 +113,5 @@ Form.addEventListener("submit", search);
 
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", displayFahrenheitTemp);
+
+search("Kansas City");
