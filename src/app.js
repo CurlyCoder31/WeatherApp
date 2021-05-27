@@ -115,7 +115,4 @@ let celsiusTemperature = null;
 let Form = document.querySelector("#search-form");
 Form.addEventListener("submit", search);
 
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", displayFahrenheitTemp);
-
 searchCity("Kansas City");
